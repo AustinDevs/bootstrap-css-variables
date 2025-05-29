@@ -216,6 +216,104 @@ $_luminance-list: .0008 .001 .0011 .0013 .0015 .0017 .002 .0022 .0025 .0027 .003
 @function shift-color($color, $weight) {
   @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
 }
+
+// CSS-native color functions that work with CSS variables
+// These use color-mix() which is supported in modern browsers
+//
+// Usage examples:
+// css-tint-color(var(--bs-primary), 20%) => color-mix(in srgb, var(--bs-primary), white 20%)
+// css-shade-color(var(--bs-primary), 20%) => color-mix(in srgb, var(--bs-primary), black 20%)
+// smart-tint-color(var(--bs-primary), 20%) => auto-detects CSS variable and uses color-mix()
+// smart-tint-color(#0d6efd, 20%) => auto-detects static color and uses SCSS mix()
+
+// Tint a color using CSS color-mix(): mix a color with white
+@function css-tint-color($color, $weight) {
+  @return color-mix(in srgb, $color, white #{$weight});
+}
+
+// Shade a color using CSS color-mix(): mix a color with black  
+@function css-shade-color($color, $weight) {
+  @return color-mix(in srgb, $color, black #{$weight});
+}
+
+// Shade or tint using CSS color-mix()
+@function css-shift-color($color, $weight) {
+  @return if($weight > 0, css-shade-color($color, $weight), css-tint-color($color, -$weight));
+}
+
+// Smart color functions that detect CSS variables and use appropriate method
+@function smart-tint-color($color, $weight) {
+  // If color starts with "var(" use CSS color-mix, otherwise use SCSS mix
+  @if str-index(inspect($color), "var(") == 1 {
+    @return css-tint-color($color, $weight);
+  } @else {
+    @return tint-color($color, $weight);
+  }
+}
+
+@function smart-shade-color($color, $weight) {
+  // If color starts with "var(" use CSS color-mix, otherwise use SCSS mix
+  @if str-index(inspect($color), "var(") == 1 {
+    @return css-shade-color($color, $weight);
+  } @else {
+    @return shade-color($color, $weight);
+  }
+}
+
+@function smart-shift-color($color, $weight) {
+  // If color starts with "var(" use CSS color-mix, otherwise use SCSS mix
+  @if str-index(inspect($color), "var(") == 1 {
+    @return css-shift-color($color, $weight);
+  } @else {
+    @return shift-color($color, $weight);
+  }
+}
+
+// CSS-native alpha/transparency functions
+@function css-rgba($color, $alpha) {
+  @return color-mix(in srgb, $color, transparent calc(100% - #{$alpha * 100%}));
+}
+
+// Smart rgba function that detects CSS variables
+@function smart-rgba($color, $alpha) {
+  @if str-index(inspect($color), "var(") == 1 {
+    @return css-rgba($color, $alpha);
+  } @else {
+    @return rgba($color, $alpha);
+  }
+}
+
+// CSS-native mix function
+@function css-mix($color1, $color2, $weight: 50%) {
+  @return color-mix(in srgb, $color1 #{$weight}, $color2);
+}
+
+// Smart mix function that detects CSS variables
+@function smart-mix($color1, $color2, $weight: 50%) {
+  @if str-index(inspect($color1), "var(") == 1 or str-index(inspect($color2), "var(") == 1 {
+    @return css-mix($color1, $color2, $weight);
+  } @else {
+    @return mix($color1, $color2, $weight);
+  }
+}
+
+// Simplified color contrast function for CSS variables
+// Since CSS doesn't have color-contrast() yet, we'll use a fallback approach
+@function css-color-contrast($background, $light: var(--bs-white), $dark: var(--bs-black)) {
+  // For CSS variables, we can't calculate contrast at compile time
+  // So we provide a reasonable default based on common theme patterns
+  // This could be enhanced with CSS color-contrast() when it's widely supported
+  @return $light; // Default to light text for most theme colors
+}
+
+// Smart color contrast that falls back for CSS variables
+@function smart-color-contrast($background, $dark: $color-contrast-dark, $light: $color-contrast-light) {
+  @if str-index(inspect($background), "var(") == 1 {
+    @return css-color-contrast($background, $light, $dark);
+  } @else {
+    @return color-contrast($background, $dark, $light);
+  }
+}
 // scss-docs-end color-functions
 
 // Return valid calc
