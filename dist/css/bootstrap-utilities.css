@@ -228,6 +228,9 @@
   --bs-navbar-toggler-border-radius: var(--bs-btn-border-radius);
   --bs-navbar-toggler-focus-width: var(--bs-btn-focus-width);
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  --bs-nav-link-color: var(--bs-navbar-nav-link-color);
+  --bs-nav-link-hover-color: var(--bs-navbar-nav-link-hover-color);
+  --bs-nav-link-disabled-color: var(--bs-navbar-nav-link-disabled-color);
   --bs-dropdown-zindex: 1000;
   --bs-dropdown-min-width: 10rem;
   --bs-dropdown-padding-x: 0;
