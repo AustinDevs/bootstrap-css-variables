@@ -33,6 +33,8 @@
   --bs-danger: var(--bs-red);
   --bs-light: var(--bs-gray-100);
   --bs-dark: var(--bs-gray-900);
+  --bs-emphasis-color: var(--bs-black);
+  --bs-emphasis-color-dark: var(--bs-white);
   --bs-primary-text-emphasis: color-mix(in srgb, var(--bs-primary), black 60%);
   --bs-secondary-text-emphasis: color-mix(in srgb, var(--bs-secondary), black 60%);
   --bs-success-text-emphasis: color-mix(in srgb, var(--bs-success), black 60%);

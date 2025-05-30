@@ -5,7 +5,7 @@
 
 :root {
   // Color system
-  
+
   // Gray colors
   --bs-white: #fff;
   --bs-gray-100: #f8f9fa;
@@ -40,6 +40,8 @@
   --bs-danger: var(--bs-red);
   --bs-light: var(--bs-gray-100);
   --bs-dark: var(--bs-gray-900);
+  --bs-emphasis-color: var(--bs-black);
+  --bs-emphasis-color-dark: var(--bs-white);
 
   // Theme emphasis colors (darkened for emphasis)
   --bs-primary-text-emphasis: color-mix(in srgb, var(--bs-primary), black 60%);
@@ -683,20 +685,20 @@
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-emphasis-color-rgb: 0, 0, 0;
-  
+
   // Additional RGB values for various uses
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-link-color-rgb: 13, 110, 253;
   --bs-link-hover-color-rgb: 10, 88, 202;
   --bs-btn-link-focus-shadow-rgb: 13, 110, 253;
-  
+
   // Secondary/tertiary color RGB values
   --bs-secondary-color-rgb: 108, 117, 125;
   --bs-secondary-bg-rgb: 233, 236, 239;
   --bs-tertiary-color-rgb: 173, 181, 189;
   --bs-tertiary-bg-rgb: 248, 249, 250;
-  
+
   // Dark mode RGB values
   --bs-body-color-dark-rgb: 173, 181, 189;
   --bs-body-bg-dark-rgb: 33, 37, 41;
