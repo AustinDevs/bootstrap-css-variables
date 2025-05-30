@@ -325,36 +325,36 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 // scss-docs-start theme-text-variables
-$primary-text-emphasis:   color-mix(in srgb, $primary, black 60%) !default;
-$secondary-text-emphasis: color-mix(in srgb, $secondary, black 60%) !default;
-$success-text-emphasis:   color-mix(in srgb, $success, black 60%) !default;
-$info-text-emphasis:      color-mix(in srgb, $info, black 60%) !default;
-$warning-text-emphasis:   color-mix(in srgb, $warning, black 60%) !default;
-$danger-text-emphasis:    color-mix(in srgb, $danger, black 60%) !default;
-$light-text-emphasis:     $gray-700 !default;
-$dark-text-emphasis:      $gray-700 !default;
+$primary-text-emphasis:   var(--bs-primary-text-emphasis) !default;
+$secondary-text-emphasis: var(--bs-secondary-text-emphasis) !default;
+$success-text-emphasis:   var(--bs-success-text-emphasis) !default;
+$info-text-emphasis:      var(--bs-info-text-emphasis) !default;
+$warning-text-emphasis:   var(--bs-warning-text-emphasis) !default;
+$danger-text-emphasis:    var(--bs-danger-text-emphasis) !default;
+$light-text-emphasis:     var(--bs-light-text-emphasis) !default;
+$dark-text-emphasis:      var(--bs-dark-text-emphasis) !default;
 // scss-docs-end theme-text-variables
 
 // scss-docs-start theme-bg-subtle-variables
-$primary-bg-subtle:       color-mix(in srgb, $primary, white 80%) !default;
-$secondary-bg-subtle:     color-mix(in srgb, $secondary, white 80%) !default;
-$success-bg-subtle:       color-mix(in srgb, $success, white 80%) !default;
-$info-bg-subtle:          color-mix(in srgb, $info, white 80%) !default;
-$warning-bg-subtle:       color-mix(in srgb, $warning, white 80%) !default;
-$danger-bg-subtle:        color-mix(in srgb, $danger, white 80%) !default;
-$light-bg-subtle:         color-mix(in srgb, var(--bs-gray-100), var(--bs-white)) !default;
-$dark-bg-subtle:          $gray-400 !default;
+$primary-bg-subtle:       var(--bs-primary-bg-subtle) !default;
+$secondary-bg-subtle:     var(--bs-secondary-bg-subtle) !default;
+$success-bg-subtle:       var(--bs-success-bg-subtle) !default;
+$info-bg-subtle:          var(--bs-info-bg-subtle) !default;
+$warning-bg-subtle:       var(--bs-warning-bg-subtle) !default;
+$danger-bg-subtle:        var(--bs-danger-bg-subtle) !default;
+$light-bg-subtle:         var(--bs-light-bg-subtle) !default;
+$dark-bg-subtle:          var(--bs-dark-bg-subtle) !default;
 // scss-docs-end theme-bg-subtle-variables
 
 // scss-docs-start theme-border-subtle-variables
-$primary-border-subtle:   color-mix(in srgb, $primary, white 60%) !default;
-$secondary-border-subtle: color-mix(in srgb, $secondary, white 60%) !default;
-$success-border-subtle:   color-mix(in srgb, $success, white 60%) !default;
-$info-border-subtle:      color-mix(in srgb, $info, white 60%) !default;
-$warning-border-subtle:   color-mix(in srgb, $warning, white 60%) !default;
-$danger-border-subtle:    color-mix(in srgb, $danger, white 60%) !default;
-$light-border-subtle:     $gray-200 !default;
-$dark-border-subtle:      $gray-500 !default;
+$primary-border-subtle:   var(--bs-primary-border-subtle) !default;
+$secondary-border-subtle: var(--bs-secondary-border-subtle) !default;
+$success-border-subtle:   var(--bs-success-border-subtle) !default;
+$info-border-subtle:      var(--bs-info-border-subtle) !default;
+$warning-border-subtle:   var(--bs-warning-border-subtle) !default;
+$danger-border-subtle:    var(--bs-danger-border-subtle) !default;
+$light-border-subtle:     var(--bs-light-border-subtle) !default;
+$dark-border-subtle:      var(--bs-dark-border-subtle) !default;
 // scss-docs-end theme-border-subtle-variables
 
 // Characters which are escaped by the escape-svg function
