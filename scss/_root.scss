@@ -2,41 +2,12 @@
 [data-bs-theme="light"] {
   // Note: Custom variable values only support SassScript inside `#{}`.
 
-  // Colors
-  //
-  // Generate palettes for full colors, grays, and theme colors.
-
-  @each $color, $value in $colors {
-    --#{$prefix}#{$color}: #{$value};
-  }
-
-  @each $color, $value in $grays {
-    --#{$prefix}gray-#{$color}: #{$value};
-  }
-
+  // Generate emphasis and subtle variations using color-mix
   @each $color, $value in $theme-colors {
-    --#{$prefix}#{$color}: #{$value};
+    --#{$prefix}#{$color}-text-emphasis: color-mix(in srgb, var(--#{$prefix}#{$color}), black 60%);
+    --#{$prefix}#{$color}-bg-subtle: color-mix(in srgb, var(--#{$prefix}#{$color}), white 80%);
+    --#{$prefix}#{$color}-border-subtle: color-mix(in srgb, var(--#{$prefix}#{$color}), white 60%);
   }
-
-  @each $color, $value in $theme-colors-rgb {
-    --#{$prefix}#{$color}-rgb: #{$value};
-  }
-
-  @each $color, $value in $theme-colors-text {
-    --#{$prefix}#{$color}-text-emphasis: #{$value};
-  }
-
-  @each $color, $value in $theme-colors-bg-subtle {
-    --#{$prefix}#{$color}-bg-subtle: #{$value};
-  }
-
-  @each $color, $value in $theme-colors-border-subtle {
-    --#{$prefix}#{$color}-border-subtle: #{$value};
-  }
-
-  --#{$prefix}white-rgb: #{to-rgb($white)};
-  --#{$prefix}black-rgb: #{to-rgb($black)};
-
   // Fonts
 
   // Note: Use `inspect` for lists so that quoted items keep the quotes.
@@ -59,32 +30,32 @@
   }
 
   --#{$prefix}body-color: #{$body-color};
-  --#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+  --#{$prefix}body-color-rgb: var(--#{$prefix}body-color-rgb);
   --#{$prefix}body-bg: #{$body-bg};
-  --#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
+  --#{$prefix}body-bg-rgb: var(--#{$prefix}body-bg-rgb);
 
   --#{$prefix}emphasis-color: #{$body-emphasis-color};
-  --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color)};
+  --#{$prefix}emphasis-color-rgb: var(--#{$prefix}emphasis-color-rgb);
 
   --#{$prefix}secondary-color: #{$body-secondary-color};
-  --#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color)};
+  --#{$prefix}secondary-color-rgb: var(--#{$prefix}secondary-color-rgb);
   --#{$prefix}secondary-bg: #{$body-secondary-bg};
-  --#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg)};
+  --#{$prefix}secondary-bg-rgb: var(--#{$prefix}secondary-bg-rgb);
 
   --#{$prefix}tertiary-color: #{$body-tertiary-color};
-  --#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color)};
+  --#{$prefix}tertiary-color-rgb: var(--#{$prefix}tertiary-color-rgb);
   --#{$prefix}tertiary-bg: #{$body-tertiary-bg};
-  --#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg)};
+  --#{$prefix}tertiary-bg-rgb: var(--#{$prefix}tertiary-bg-rgb);
   // scss-docs-end root-body-variables
 
   --#{$prefix}heading-color: #{$headings-color};
 
   --#{$prefix}link-color: #{$link-color};
-  --#{$prefix}link-color-rgb: #{to-rgb($link-color)};
+  --#{$prefix}link-color-rgb: var(--#{$prefix}link-color-rgb);
   --#{$prefix}link-decoration: #{$link-decoration};
 
   --#{$prefix}link-hover-color: #{$link-hover-color};
-  --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
+  --#{$prefix}link-hover-color-rgb: var(--#{$prefix}link-hover-color-rgb);
 
   @if $link-hover-decoration != null {
     --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
@@ -135,41 +106,36 @@
 
     // scss-docs-start root-dark-mode-vars
     --#{$prefix}body-color: #{$body-color-dark};
-    --#{$prefix}body-color-rgb: #{to-rgb($body-color-dark)};
+    --#{$prefix}body-color-rgb: var(--#{$prefix}body-color-dark-rgb);
     --#{$prefix}body-bg: #{$body-bg-dark};
-    --#{$prefix}body-bg-rgb: #{to-rgb($body-bg-dark)};
+    --#{$prefix}body-bg-rgb: var(--#{$prefix}body-bg-dark-rgb);
 
     --#{$prefix}emphasis-color: #{$body-emphasis-color-dark};
-    --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
+    --#{$prefix}emphasis-color-rgb: var(--#{$prefix}emphasis-color-dark-rgb);
 
     --#{$prefix}secondary-color: #{$body-secondary-color-dark};
-    --#{$prefix}secondary-color-rgb: #{to-rgb($body-secondary-color-dark)};
+    --#{$prefix}secondary-color-rgb: var(--#{$prefix}secondary-color-dark-rgb);
     --#{$prefix}secondary-bg: #{$body-secondary-bg-dark};
-    --#{$prefix}secondary-bg-rgb: #{to-rgb($body-secondary-bg-dark)};
+    --#{$prefix}secondary-bg-rgb: var(--#{$prefix}secondary-bg-dark-rgb);
 
     --#{$prefix}tertiary-color: #{$body-tertiary-color-dark};
-    --#{$prefix}tertiary-color-rgb: #{to-rgb($body-tertiary-color-dark)};
+    --#{$prefix}tertiary-color-rgb: var(--#{$prefix}tertiary-color-dark-rgb);
     --#{$prefix}tertiary-bg: #{$body-tertiary-bg-dark};
-    --#{$prefix}tertiary-bg-rgb: #{to-rgb($body-tertiary-bg-dark)};
+    --#{$prefix}tertiary-bg-rgb: var(--#{$prefix}tertiary-bg-dark-rgb);
 
-    @each $color, $value in $theme-colors-text-dark {
-      --#{$prefix}#{$color}-text-emphasis: #{$value};
-    }
-
-    @each $color, $value in $theme-colors-bg-subtle-dark {
-      --#{$prefix}#{$color}-bg-subtle: #{$value};
-    }
-
-    @each $color, $value in $theme-colors-border-subtle-dark {
-      --#{$prefix}#{$color}-border-subtle: #{$value};
+    // Generate dark mode emphasis and subtle variations using color-mix
+    @each $color, $value in $theme-colors {
+      --#{$prefix}#{$color}-text-emphasis: color-mix(in srgb, var(--#{$prefix}#{$color}), white 40%);
+      --#{$prefix}#{$color}-bg-subtle: color-mix(in srgb, var(--#{$prefix}#{$color}), black 80%);
+      --#{$prefix}#{$color}-border-subtle: color-mix(in srgb, var(--#{$prefix}#{$color}), black 40%);
     }
 
     --#{$prefix}heading-color: #{$headings-color-dark};
 
     --#{$prefix}link-color: #{$link-color-dark};
     --#{$prefix}link-hover-color: #{$link-hover-color-dark};
-    --#{$prefix}link-color-rgb: #{to-rgb($link-color-dark)};
-    --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color-dark)};
+    --#{$prefix}link-color-rgb: var(--#{$prefix}link-color-dark-rgb);
+    --#{$prefix}link-hover-color-rgb: var(--#{$prefix}link-hover-color-dark-rgb);
 
     --#{$prefix}code-color: #{$code-color-dark};
     --#{$prefix}highlight-color: #{$mark-color-dark};

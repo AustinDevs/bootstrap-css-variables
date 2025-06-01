@@ -1,0 +1,725 @@
+// CSS Variables
+//
+// CSS custom properties that mirror SCSS variables for runtime customization.
+// These variables are defined on the :root element and can be modified at runtime.
+
+:root {
+  // Color system
+
+  // Gray colors
+  --#{$prefix}white: #fff;
+  --#{$prefix}gray-100: #f8f9fa;
+  --#{$prefix}gray-200: #e9ecef;
+  --#{$prefix}gray-300: #dee2e6;
+  --#{$prefix}gray-400: #ced4da;
+  --#{$prefix}gray-500: #adb5bd;
+  --#{$prefix}gray-600: #6c757d;
+  --#{$prefix}gray-700: #495057;
+  --#{$prefix}gray-800: #343a40;
+  --#{$prefix}gray-900: #212529;
+  --#{$prefix}black: #000;
+
+  --#{$prefix}white-rgb: 255, 255, 255;
+  --#{$prefix}gray-100-rgb: 248, 249, 250;
+  --#{$prefix}gray-200-rgb: 233, 236, 239;
+  --#{$prefix}gray-300-rgb: 222, 226, 230;
+  --#{$prefix}gray-400-rgb: 206, 212, 218;
+  --#{$prefix}gray-500-rgb: 173, 181, 189;
+  --#{$prefix}gray-600-rgb: 108, 117, 125;
+  --#{$prefix}gray-700-rgb: 73, 80, 87;
+  --#{$prefix}gray-800-rgb: 52, 58, 64;
+  --#{$prefix}gray-900-rgb: 33, 37, 41;
+  --#{$prefix}black-rgb: 0, 0, 0;
+
+  // Theme colors
+  --#{$prefix}blue: #0d6efd;
+  --#{$prefix}indigo: #6610f2;
+  --#{$prefix}purple: #6f42c1;
+  --#{$prefix}pink: #d63384;
+  --#{$prefix}red: #dc3545;
+  --#{$prefix}orange: #fd7e14;
+  --#{$prefix}yellow: #ffc107;
+  --#{$prefix}green: #198754;
+  --#{$prefix}teal: #20c997;
+  --#{$prefix}cyan: #0dcaf0;
+
+  --#{$prefix}blue-rgb: 13, 110, 253;
+  --#{$prefix}indigo-rgb: 102, 16, 242;
+  --#{$prefix}purple-rgb: 111, 66, 193;
+  --#{$prefix}pink-rgb: 214, 51, 132;
+  --#{$prefix}red-rgb: 220, 53, 69;
+  --#{$prefix}orange-rgb: 253, 126, 20;
+  --#{$prefix}yellow-rgb: 255, 193, 7;
+  --#{$prefix}green-rgb: 25, 135, 84;
+  --#{$prefix}teal-rgb: 32, 201, 151;
+  --#{$prefix}cyan-rgb: 13, 202, 240;
+
+  // Theme color variations
+  --#{$prefix}primary: var(--#{$prefix}blue);
+  --#{$prefix}secondary: var(--#{$prefix}gray-600);
+  --#{$prefix}success: var(--#{$prefix}green);
+  --#{$prefix}info: var(--#{$prefix}cyan);
+  --#{$prefix}warning: var(--#{$prefix}yellow);
+  --#{$prefix}danger: var(--#{$prefix}red);
+  --#{$prefix}light: var(--#{$prefix}gray-100);
+  --#{$prefix}dark: var(--#{$prefix}gray-900);
+
+  // Theme color RGB values
+  --#{$prefix}primary-rgb: var(--#{$prefix}blue-rgb);
+  --#{$prefix}secondary-rgb: var(--#{$prefix}gray-600-rgb);
+  --#{$prefix}success-rgb: var(--#{$prefix}green-rgb);
+  --#{$prefix}info-rgb: var(--#{$prefix}cyan-rgb);
+  --#{$prefix}warning-rgb: var(--#{$prefix}yellow-rgb);
+  --#{$prefix}danger-rgb: var(--#{$prefix}red-rgb);
+  --#{$prefix}light-rgb: var(--#{$prefix}gray-100-rgb);
+  --#{$prefix}dark-rgb: var(--#{$prefix}gray-900-rgb);
+
+  // Emphasis colors
+  --#{$prefix}emphasis-color: var(--#{$prefix}black);
+  --#{$prefix}emphasis-color-dark: var(--#{$prefix}white);
+
+  // Body
+  --#{$prefix}body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --#{$prefix}body-font-size: 1rem;
+  --#{$prefix}body-font-weight: 400;
+  --#{$prefix}body-line-height: 1.5;
+  --#{$prefix}body-color: var(--#{$prefix}gray-900);
+  --#{$prefix}body-bg: var(--#{$prefix}white);
+
+  // Links
+  --#{$prefix}link-color: var(--#{$prefix}primary);
+  --#{$prefix}link-decoration: underline;
+  --#{$prefix}link-hover-color: #0a58ca;
+  --#{$prefix}link-hover-decoration: null;
+
+  // Spacing
+  --#{$prefix}spacer: 1rem;
+
+  // Grid breakpoints
+  --#{$prefix}breakpoint-xs: 0;
+  --#{$prefix}breakpoint-sm: 576px;
+  --#{$prefix}breakpoint-md: 768px;
+  --#{$prefix}breakpoint-lg: 992px;
+  --#{$prefix}breakpoint-xl: 1200px;
+  --#{$prefix}breakpoint-xxl: 1400px;
+
+  // Grid containers
+  --#{$prefix}container-sm: 540px;
+  --#{$prefix}container-md: 720px;
+  --#{$prefix}container-lg: 960px;
+  --#{$prefix}container-xl: 1140px;
+  --#{$prefix}container-xxl: 1320px;
+
+  // Components
+  --#{$prefix}component-active-color: var(--#{$prefix}white);
+  --#{$prefix}component-active-bg: var(--#{$prefix}primary);
+
+  --#{$prefix}caret-width: 0.3em;
+  --#{$prefix}caret-vertical-align: var(--#{$prefix}caret-width) * 0.85;
+  --#{$prefix}caret-spacing: var(--#{$prefix}caret-width) * 0.85;
+
+  --#{$prefix}transition-base: all 0.15s ease-in-out;
+  --#{$prefix}transition-fade: opacity 0.15s linear;
+  --#{$prefix}transition-collapse: height 0.35s ease;
+
+  // Fonts
+  --#{$prefix}font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --#{$prefix}font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --#{$prefix}gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+
+  // Typography
+  --#{$prefix}font-size-root: null;
+  --#{$prefix}font-size-base: 1rem;
+  --#{$prefix}font-size-sm: var(--#{$prefix}font-size-base) * 0.875;
+  --#{$prefix}font-size-lg: var(--#{$prefix}font-size-base) * 1.25;
+
+  --#{$prefix}font-weight-lighter: lighter;
+  --#{$prefix}font-weight-light: 300;
+  --#{$prefix}font-weight-normal: 400;
+  --#{$prefix}font-weight-medium: 500;
+  --#{$prefix}font-weight-semibold: 600;
+  --#{$prefix}font-weight-bold: 700;
+  --#{$prefix}font-weight-bolder: bolder;
+
+  --#{$prefix}line-height-base: 1.5;
+  --#{$prefix}line-height-sm: 1.25;
+  --#{$prefix}line-height-lg: 2;
+
+  --#{$prefix}h1-font-size: var(--#{$prefix}font-size-base) * 2.5;
+  --#{$prefix}h2-font-size: var(--#{$prefix}font-size-base) * 2;
+  --#{$prefix}h3-font-size: var(--#{$prefix}font-size-base) * 1.75;
+  --#{$prefix}h4-font-size: var(--#{$prefix}font-size-base) * 1.5;
+  --#{$prefix}h5-font-size: var(--#{$prefix}font-size-base) * 1.25;
+  --#{$prefix}h6-font-size: var(--#{$prefix}font-size-base);
+
+  // Paragraphs
+  --#{$prefix}paragraph-margin-bottom: 1rem;
+
+  // Grid columns
+  --#{$prefix}grid-columns: 12;
+  --#{$prefix}grid-gutter-width: 1.5rem;
+  --#{$prefix}grid-row-columns: 6;
+
+  // Container padding
+  --#{$prefix}container-padding-x: var(--#{$prefix}grid-gutter-width) / 2;
+
+  // Border
+  --#{$prefix}border-width: 1px;
+  --#{$prefix}border-style: solid;
+  --#{$prefix}border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}border-color-translucent: rgba(0, 0, 0, 0.175);
+
+  --#{$prefix}border-radius: 0.375rem;
+  --#{$prefix}border-radius-sm: 0.25rem;
+  --#{$prefix}border-radius-lg: 0.5rem;
+  --#{$prefix}border-radius-xl: 1rem;
+  --#{$prefix}border-radius-xxl: 2rem;
+  --#{$prefix}border-radius-pill: 50rem;
+
+  // Box shadow
+  --#{$prefix}box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --#{$prefix}box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --#{$prefix}box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --#{$prefix}box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+  // Focus ring
+  --#{$prefix}focus-ring-width: 0.25rem;
+  --#{$prefix}focus-ring-opacity: 0.25;
+  --#{$prefix}focus-ring-color: rgba(var(--#{$prefix}primary-rgb), var(--#{$prefix}focus-ring-opacity));
+  --#{$prefix}focus-ring-blur: 0;
+  --#{$prefix}focus-ring-box-shadow: 0 0 var(--#{$prefix}focus-ring-blur) var(--#{$prefix}focus-ring-width) var(--#{$prefix}focus-ring-color);
+
+  // Buttons
+  --#{$prefix}btn-padding-y: 0.375rem;
+  --#{$prefix}btn-padding-x: 0.75rem;
+  --#{$prefix}btn-font-family: null;
+  --#{$prefix}btn-font-size: var(--#{$prefix}font-size-base);
+  --#{$prefix}btn-line-height: var(--#{$prefix}line-height-base);
+  --#{$prefix}btn-white-space: null;
+  --#{$prefix}btn-vertical-align: middle;
+  --#{$prefix}btn-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}btn-border-color: transparent;
+  --#{$prefix}btn-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}btn-hover-border-color: transparent;
+  --#{$prefix}btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  --#{$prefix}btn-disabled-opacity: 0.65;
+  --#{$prefix}btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--#{$prefix}btn-focus-shadow-rgb), 0.5);
+
+  // Button sizes
+  --#{$prefix}btn-padding-y-sm: 0.25rem;
+  --#{$prefix}btn-padding-x-sm: 0.5rem;
+  --#{$prefix}btn-font-size-sm: var(--#{$prefix}font-size-sm);
+
+  --#{$prefix}btn-padding-y-lg: 0.5rem;
+  --#{$prefix}btn-padding-x-lg: 1rem;
+  --#{$prefix}btn-font-size-lg: var(--#{$prefix}font-size-lg);
+
+  // Forms
+  --#{$prefix}input-padding-y: var(--#{$prefix}btn-padding-y);
+  --#{$prefix}input-padding-x: var(--#{$prefix}btn-padding-x);
+  --#{$prefix}input-font-family: var(--#{$prefix}btn-font-family);
+  --#{$prefix}input-font-size: var(--#{$prefix}btn-font-size);
+  --#{$prefix}input-font-weight: var(--#{$prefix}font-weight-normal);
+  --#{$prefix}input-line-height: var(--#{$prefix}btn-line-height);
+
+  --#{$prefix}input-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}input-disabled-color: null;
+  --#{$prefix}input-disabled-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}input-disabled-border-color: null;
+
+  --#{$prefix}input-color: var(--#{$prefix}body-color);
+  --#{$prefix}input-border-color: var(--#{$prefix}gray-400);
+  --#{$prefix}input-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}input-box-shadow: var(--#{$prefix}box-shadow-inset);
+
+  --#{$prefix}input-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}input-border-radius-sm: var(--#{$prefix}border-radius-sm);
+  --#{$prefix}input-border-radius-lg: var(--#{$prefix}border-radius-lg);
+
+  --#{$prefix}input-focus-bg: var(--#{$prefix}input-bg);
+  --#{$prefix}input-focus-border-color: #86b7fe;
+  --#{$prefix}input-focus-color: var(--#{$prefix}input-color);
+  --#{$prefix}input-focus-width: 0.25rem;
+  --#{$prefix}input-focus-box-shadow: 0 0 0 var(--#{$prefix}input-focus-width) rgba(var(--#{$prefix}primary-rgb), 0.25);
+
+  --#{$prefix}input-placeholder-color: var(--#{$prefix}gray-600);
+  --#{$prefix}input-plaintext-color: var(--#{$prefix}body-color);
+
+  // Input sizes
+  --#{$prefix}input-padding-y-sm: var(--#{$prefix}btn-padding-y-sm);
+  --#{$prefix}input-padding-x-sm: var(--#{$prefix}btn-padding-x-sm);
+  --#{$prefix}input-font-size-sm: var(--#{$prefix}btn-font-size-sm);
+
+  --#{$prefix}input-padding-y-lg: var(--#{$prefix}btn-padding-y-lg);
+  --#{$prefix}input-padding-x-lg: var(--#{$prefix}btn-padding-x-lg);
+  --#{$prefix}input-font-size-lg: var(--#{$prefix}btn-font-size-lg);
+
+  // Tables
+  --#{$prefix}table-color-type: initial;
+  --#{$prefix}table-bg-type: initial;
+
+  --#{$prefix}table-color-state: initial;
+  --#{$prefix}table-bg-state: initial;
+
+  --#{$prefix}table-color: var(--#{$prefix}body-color);
+  --#{$prefix}table-bg: transparent;
+  --#{$prefix}table-border-factor: 1;
+  --#{$prefix}table-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}table-border-color: var(--#{$prefix}border-color);
+
+  --#{$prefix}table-striped-color: var(--#{$prefix}table-color);
+  --#{$prefix}table-striped-bg-factor: 0.05;
+  --#{$prefix}table-striped-bg: rgba(0, 0, 0, var(--#{$prefix}table-striped-bg-factor));
+
+  --#{$prefix}table-active-color: var(--#{$prefix}table-color);
+  --#{$prefix}table-active-bg-factor: 0.1;
+  --#{$prefix}table-active-bg: rgba(0, 0, 0, var(--#{$prefix}table-active-bg-factor));
+
+  --#{$prefix}table-hover-color: var(--#{$prefix}table-color);
+  --#{$prefix}table-hover-bg-factor: 0.075;
+  --#{$prefix}table-hover-bg: rgba(0, 0, 0, var(--#{$prefix}table-hover-bg-factor));
+
+  --#{$prefix}table-cell-padding-y: 0.5rem;
+  --#{$prefix}table-cell-padding-x: 0.5rem;
+  --#{$prefix}table-cell-padding-y-sm: 0.25rem;
+  --#{$prefix}table-cell-padding-x-sm: 0.25rem;
+
+  --#{$prefix}table-caption-color: var(--#{$prefix}gray-600);
+
+  // Navbar
+  --#{$prefix}navbar-padding-y: 0.5rem;
+  --#{$prefix}navbar-padding-x: null;
+  --#{$prefix}navbar-nav-link-padding-x: 0.5rem;
+  --#{$prefix}navbar-brand-padding-y: 0.3125rem;
+  --#{$prefix}navbar-brand-margin-end: 1rem;
+  --#{$prefix}navbar-brand-font-size: var(--#{$prefix}font-size-lg);
+  --#{$prefix}navbar-brand-color: rgba(var(--#{$prefix}emphasis-color-rgb), 1);
+  --#{$prefix}navbar-brand-hover-color: rgba(var(--#{$prefix}emphasis-color-rgb), 1);
+  --#{$prefix}navbar-nav-link-color: rgba(var(--#{$prefix}emphasis-color-rgb), 0.65);
+  --#{$prefix}navbar-nav-link-hover-color: rgba(var(--#{$prefix}emphasis-color-rgb), 0.8);
+  --#{$prefix}navbar-nav-link-disabled-color: rgba(var(--#{$prefix}emphasis-color-rgb), 0.3);
+  --#{$prefix}navbar-toggler-padding-y: 0.25rem;
+  --#{$prefix}navbar-toggler-padding-x: 0.75rem;
+  --#{$prefix}navbar-toggler-font-size: var(--#{$prefix}font-size-lg);
+  --#{$prefix}navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --#{$prefix}navbar-toggler-border-color: rgba(var(--#{$prefix}emphasis-color-rgb), 0.15);
+  --#{$prefix}navbar-toggler-border-radius: var(--#{$prefix}btn-border-radius);
+  --#{$prefix}navbar-toggler-focus-width: var(--#{$prefix}btn-focus-width);
+  --#{$prefix}navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+
+  // Navs
+  --#{$prefix}nav-link-color: var(--#{$prefix}navbar-nav-link-color);
+  --#{$prefix}nav-link-hover-color: var(--#{$prefix}navbar-nav-link-hover-color);
+  --#{$prefix}nav-link-disabled-color: var(--#{$prefix}navbar-nav-link-disabled-color);
+
+  // Dropdowns
+  --#{$prefix}dropdown-zindex: 1000;
+  --#{$prefix}dropdown-min-width: 10rem;
+  --#{$prefix}dropdown-padding-x: 0;
+  --#{$prefix}dropdown-padding-y: 0.5rem;
+  --#{$prefix}dropdown-spacer: 0.125rem;
+  --#{$prefix}dropdown-font-size: var(--#{$prefix}font-size-base);
+  --#{$prefix}dropdown-color: var(--#{$prefix}body-color);
+  --#{$prefix}dropdown-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}dropdown-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}dropdown-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}dropdown-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}dropdown-inner-border-radius: calc(var(--#{$prefix}border-radius) - var(--#{$prefix}border-width));
+  --#{$prefix}dropdown-divider-bg: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}dropdown-divider-margin-y: 0.5rem;
+  --#{$prefix}dropdown-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  --#{$prefix}dropdown-link-color: var(--#{$prefix}gray-900);
+  --#{$prefix}dropdown-link-hover-color: var(--#{$prefix}gray-900);
+  --#{$prefix}dropdown-link-hover-bg: var(--#{$prefix}gray-200);
+
+  --#{$prefix}dropdown-link-active-color: var(--#{$prefix}component-active-color);
+  --#{$prefix}dropdown-link-active-bg: var(--#{$prefix}component-active-bg);
+
+  --#{$prefix}dropdown-link-disabled-color: var(--#{$prefix}gray-500);
+
+  --#{$prefix}dropdown-item-padding-y: 0.25rem;
+  --#{$prefix}dropdown-item-padding-x: 1rem;
+
+  --#{$prefix}dropdown-header-color: var(--#{$prefix}gray-600);
+  --#{$prefix}dropdown-header-padding-x: var(--#{$prefix}dropdown-item-padding-x);
+  --#{$prefix}dropdown-header-padding-y: var(--#{$prefix}dropdown-padding-y);
+
+  // Pagination
+  --#{$prefix}pagination-padding-x: 0.75rem;
+  --#{$prefix}pagination-padding-y: 0.375rem;
+  --#{$prefix}pagination-padding-x-sm: 0.5rem;
+  --#{$prefix}pagination-padding-y-sm: 0.25rem;
+  --#{$prefix}pagination-padding-x-lg: 1.5rem;
+  --#{$prefix}pagination-padding-y-lg: 0.75rem;
+
+  --#{$prefix}pagination-font-size: var(--#{$prefix}font-size-base);
+
+  --#{$prefix}pagination-color: var(--#{$prefix}link-color);
+  --#{$prefix}pagination-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}pagination-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}pagination-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}pagination-border-radius: var(--#{$prefix}border-radius);
+
+  --#{$prefix}pagination-hover-color: var(--#{$prefix}link-hover-color);
+  --#{$prefix}pagination-hover-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}pagination-hover-border-color: var(--#{$prefix}gray-300);
+
+  --#{$prefix}pagination-focus-color: var(--#{$prefix}link-hover-color);
+  --#{$prefix}pagination-focus-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}pagination-focus-box-shadow: var(--#{$prefix}focus-ring-box-shadow);
+
+  --#{$prefix}pagination-active-color: var(--#{$prefix}component-active-color);
+  --#{$prefix}pagination-active-bg: var(--#{$prefix}component-active-bg);
+  --#{$prefix}pagination-active-border-color: var(--#{$prefix}component-active-bg);
+
+  --#{$prefix}pagination-disabled-color: var(--#{$prefix}gray-600);
+  --#{$prefix}pagination-disabled-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}pagination-disabled-border-color: var(--#{$prefix}gray-300);
+
+  // Cards
+  --#{$prefix}card-spacer-y: 1rem;
+  --#{$prefix}card-spacer-x: 1rem;
+  --#{$prefix}card-title-spacer-y: 0.5rem;
+  --#{$prefix}card-title-color: null;
+  --#{$prefix}card-subtitle-color: null;
+  --#{$prefix}card-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}card-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}card-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}card-box-shadow: null;
+  --#{$prefix}card-inner-border-radius: calc(var(--#{$prefix}border-radius) - var(--#{$prefix}border-width));
+  --#{$prefix}card-cap-padding-y: 0.5rem;
+  --#{$prefix}card-cap-padding-x: 1rem;
+  --#{$prefix}card-cap-bg: rgba(var(--#{$prefix}body-color-rgb), 0.03);
+  --#{$prefix}card-cap-color: null;
+  --#{$prefix}card-height: null;
+  --#{$prefix}card-color: null;
+  --#{$prefix}card-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}card-img-overlay-padding: 1rem;
+  --#{$prefix}card-group-margin: 0.75rem;
+
+  // Accordions
+  --#{$prefix}accordion-color: var(--#{$prefix}body-color);
+  --#{$prefix}accordion-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}accordion-transition: var(--#{$prefix}collapse-transition);
+  --#{$prefix}accordion-border-color: var(--#{$prefix}border-color);
+  --#{$prefix}accordion-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}accordion-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}accordion-inner-border-radius: calc(var(--#{$prefix}border-radius) - var(--#{$prefix}border-width));
+
+  --#{$prefix}accordion-btn-padding-x: 1.25rem;
+  --#{$prefix}accordion-btn-padding-y: 1rem;
+  --#{$prefix}accordion-btn-color: var(--#{$prefix}body-color);
+  --#{$prefix}accordion-btn-bg: var(--#{$prefix}accordion-bg);
+  --#{$prefix}accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --#{$prefix}accordion-btn-icon-width: 1.25rem;
+  --#{$prefix}accordion-btn-icon-transform: rotate(-180deg);
+  --#{$prefix}accordion-btn-icon-transition: transform 0.2s ease-in-out;
+  --#{$prefix}accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23052c65'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --#{$prefix}accordion-btn-focus-border-color: var(--#{$prefix}input-focus-border-color);
+  --#{$prefix}accordion-btn-focus-box-shadow: var(--#{$prefix}btn-focus-box-shadow);
+  --#{$prefix}accordion-body-padding-x: 1.25rem;
+  --#{$prefix}accordion-body-padding-y: 1rem;
+
+  // Tooltips
+  --#{$prefix}tooltip-zindex: 1080;
+  --#{$prefix}tooltip-max-width: 200px;
+  --#{$prefix}tooltip-padding-x: 0.5rem;
+  --#{$prefix}tooltip-padding-y: 0.25rem;
+  --#{$prefix}tooltip-margin: null;
+
+  --#{$prefix}tooltip-font-size: 0.875rem;
+  --#{$prefix}tooltip-color: var(--#{$prefix}body-bg);
+  --#{$prefix}tooltip-bg: var(--#{$prefix}emphasis-color);
+  --#{$prefix}tooltip-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}tooltip-opacity: 0.9;
+  --#{$prefix}tooltip-arrow-width: 0.8rem;
+  --#{$prefix}tooltip-arrow-height: 0.4rem;
+
+  // Popovers
+  --#{$prefix}popover-zindex: 1070;
+  --#{$prefix}popover-max-width: 276px;
+  --#{$prefix}popover-font-size: 0.875rem;
+  --#{$prefix}popover-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}popover-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}popover-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}popover-border-radius: var(--#{$prefix}border-radius-lg);
+  --#{$prefix}popover-inner-border-radius: calc(var(--#{$prefix}border-radius-lg) - var(--#{$prefix}border-width));
+  --#{$prefix}popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  --#{$prefix}popover-header-padding-x: 1rem;
+  --#{$prefix}popover-header-padding-y: 0.5rem;
+  --#{$prefix}popover-header-font-size: var(--#{$prefix}font-size-base);
+  --#{$prefix}popover-header-color: null;
+  --#{$prefix}popover-header-bg: var(--#{$prefix}gray-100);
+  --#{$prefix}popover-header-border-color: var(--#{$prefix}popover-border-color);
+
+  --#{$prefix}popover-body-padding-x: 1rem;
+  --#{$prefix}popover-body-padding-y: 1rem;
+  --#{$prefix}popover-body-color: var(--#{$prefix}body-color);
+
+  --#{$prefix}popover-arrow-width: 1rem;
+  --#{$prefix}popover-arrow-height: 0.5rem;
+  --#{$prefix}popover-arrow-border: var(--#{$prefix}popover-border-color);
+
+  // Toasts
+  --#{$prefix}toast-zindex: 1090;
+  --#{$prefix}toast-padding-x: 0.75rem;
+  --#{$prefix}toast-padding-y: 0.5rem;
+  --#{$prefix}toast-spacing: 1.5rem;
+  --#{$prefix}toast-max-width: 350px;
+
+  --#{$prefix}toast-font-size: 0.875rem;
+  --#{$prefix}toast-color: null;
+  --#{$prefix}toast-bg: rgba(var(--#{$prefix}body-bg-rgb), 0.85);
+  --#{$prefix}toast-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}toast-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}toast-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}toast-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  --#{$prefix}toast-header-color: var(--#{$prefix}gray-600);
+  --#{$prefix}toast-header-bg: rgba(var(--#{$prefix}body-bg-rgb), 0.85);
+  --#{$prefix}toast-header-border-color: var(--#{$prefix}toast-border-color);
+
+  // Badges
+  --#{$prefix}badge-padding-x: 0.65em;
+  --#{$prefix}badge-padding-y: 0.35em;
+  --#{$prefix}badge-font-size: 0.75em;
+  --#{$prefix}badge-font-weight: var(--#{$prefix}font-weight-bold);
+  --#{$prefix}badge-color: var(--#{$prefix}white);
+  --#{$prefix}badge-border-radius: var(--#{$prefix}border-radius);
+
+  // Modals
+  --#{$prefix}modal-zindex: 1055;
+  --#{$prefix}modal-width: 500px;
+  --#{$prefix}modal-padding: 1rem;
+  --#{$prefix}modal-margin: 0.5rem;
+  --#{$prefix}modal-color: null;
+  --#{$prefix}modal-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}modal-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}modal-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}modal-border-radius: var(--#{$prefix}border-radius-lg);
+  --#{$prefix}modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --#{$prefix}modal-inner-border-radius: calc(var(--#{$prefix}border-radius-lg) - var(--#{$prefix}border-width));
+
+  --#{$prefix}modal-header-padding-x: 1rem;
+  --#{$prefix}modal-header-padding-y: 1rem;
+  --#{$prefix}modal-header-padding: var(--#{$prefix}modal-header-padding-y) var(--#{$prefix}modal-header-padding-x);
+  --#{$prefix}modal-header-border-color: var(--#{$prefix}border-color);
+  --#{$prefix}modal-header-border-width: var(--#{$prefix}border-width);
+
+  --#{$prefix}modal-title-line-height: var(--#{$prefix}line-height-base);
+
+  --#{$prefix}modal-content-color: null;
+  --#{$prefix}modal-content-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}modal-content-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}modal-content-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}modal-content-border-radius: var(--#{$prefix}border-radius-lg);
+  --#{$prefix}modal-content-inner-border-radius: calc(var(--#{$prefix}border-radius-lg) - var(--#{$prefix}border-width));
+  --#{$prefix}modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  --#{$prefix}modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+
+  --#{$prefix}modal-backdrop-zindex: 1050;
+  --#{$prefix}modal-backdrop-bg: var(--#{$prefix}black);
+  --#{$prefix}modal-backdrop-opacity: 0.5;
+
+  // Alerts
+  --#{$prefix}alert-padding-x: 1rem;
+  --#{$prefix}alert-padding-y: 1rem;
+  --#{$prefix}alert-margin-bottom: 1rem;
+  --#{$prefix}alert-color: inherit;
+  --#{$prefix}alert-bg: transparent;
+  --#{$prefix}alert-border: var(--#{$prefix}border-width) solid transparent;
+  --#{$prefix}alert-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}alert-link-color: inherit;
+
+  // Progress bars
+  --#{$prefix}progress-height: 1rem;
+  --#{$prefix}progress-font-size: 0.75rem;
+  --#{$prefix}progress-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}progress-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}progress-box-shadow: var(--#{$prefix}box-shadow-inset);
+  --#{$prefix}progress-bar-color: var(--#{$prefix}white);
+  --#{$prefix}progress-bar-bg: var(--#{$prefix}primary);
+  --#{$prefix}progress-bar-animation-timing: 1s linear infinite;
+  --#{$prefix}progress-bar-transition: width 0.6s ease;
+
+  // List group
+  --#{$prefix}list-group-color: var(--#{$prefix}gray-900);
+  --#{$prefix}list-group-bg: var(--#{$prefix}white);
+  --#{$prefix}list-group-border-color: rgba(0, 0, 0, 0.125);
+  --#{$prefix}list-group-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}list-group-border-radius: var(--#{$prefix}border-radius);
+
+  --#{$prefix}list-group-item-padding-x: 1rem;
+  --#{$prefix}list-group-item-padding-y: 0.5rem;
+  --#{$prefix}list-group-item-bg-scale: -80%;
+  --#{$prefix}list-group-item-color-scale: 40%;
+
+  --#{$prefix}list-group-action-color: var(--#{$prefix}gray-700);
+  --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+
+  --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}gray-100);
+  --#{$prefix}list-group-action-active-color: var(--#{$prefix}body-color);
+  --#{$prefix}list-group-action-active-bg: var(--#{$prefix}gray-200);
+
+  --#{$prefix}list-group-disabled-color: var(--#{$prefix}gray-600);
+  --#{$prefix}list-group-disabled-bg: var(--#{$prefix}list-group-bg);
+
+  --#{$prefix}list-group-active-color: var(--#{$prefix}component-active-color);
+  --#{$prefix}list-group-active-bg: var(--#{$prefix}component-active-bg);
+  --#{$prefix}list-group-active-border-color: var(--#{$prefix}list-group-active-bg);
+
+  // Image thumbnails
+  --#{$prefix}thumbnail-padding: 0.25rem;
+  --#{$prefix}thumbnail-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}thumbnail-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}thumbnail-border-color: var(--#{$prefix}gray-300);
+  --#{$prefix}thumbnail-border-radius: var(--#{$prefix}border-radius);
+  --#{$prefix}thumbnail-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+
+  // Breadcrumbs
+  --#{$prefix}breadcrumb-padding-x: 0;
+  --#{$prefix}breadcrumb-padding-y: 0;
+  --#{$prefix}breadcrumb-margin-bottom: 1rem;
+  --#{$prefix}breadcrumb-bg: null;
+  --#{$prefix}breadcrumb-border-radius: null;
+  --#{$prefix}breadcrumb-divider-color: var(--#{$prefix}gray-600);
+  --#{$prefix}breadcrumb-item-active-color: var(--#{$prefix}gray-600);
+  --#{$prefix}breadcrumb-divider: quote("/");
+
+  // Carousel
+  --#{$prefix}carousel-control-color: var(--#{$prefix}white);
+  --#{$prefix}carousel-control-width: 15%;
+  --#{$prefix}carousel-control-opacity: 0.5;
+  --#{$prefix}carousel-control-hover-opacity: 0.9;
+  --#{$prefix}carousel-control-transition: opacity 0.15s ease;
+
+  --#{$prefix}carousel-indicator-width: 30px;
+  --#{$prefix}carousel-indicator-height: 3px;
+  --#{$prefix}carousel-indicator-hit-area-height: 10px;
+  --#{$prefix}carousel-indicator-spacer: 3px;
+  --#{$prefix}carousel-indicator-opacity: 0.5;
+  --#{$prefix}carousel-indicator-active-bg: var(--#{$prefix}white);
+  --#{$prefix}carousel-indicator-active-opacity: 1;
+  --#{$prefix}carousel-indicator-transition: opacity 0.6s ease;
+
+  --#{$prefix}carousel-caption-width: 70%;
+  --#{$prefix}carousel-caption-color: var(--#{$prefix}white);
+  --#{$prefix}carousel-caption-padding-y: 1.25rem;
+  --#{$prefix}carousel-caption-spacer: 1.25rem;
+
+  --#{$prefix}carousel-control-icon-width: 2rem;
+
+  --#{$prefix}carousel-control-prev-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/%3e%3c/svg%3e");
+  --#{$prefix}carousel-control-next-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3e%3c/svg%3e");
+
+  --#{$prefix}carousel-transition-duration: 0.6s;
+  --#{$prefix}carousel-transition: transform var(--#{$prefix}carousel-transition-duration) ease-in-out;
+
+  // Spinners
+  --#{$prefix}spinner-width: 2rem;
+  --#{$prefix}spinner-height: 2rem;
+  --#{$prefix}spinner-vertical-align: -0.125em;
+  --#{$prefix}spinner-border-width: 0.25em;
+  --#{$prefix}spinner-animation-speed: 0.75s;
+
+  --#{$prefix}spinner-width-sm: 1rem;
+  --#{$prefix}spinner-height-sm: 1rem;
+  --#{$prefix}spinner-border-width-sm: 0.125em;
+
+  // Close
+  --#{$prefix}btn-close-width: 1em;
+  --#{$prefix}btn-close-height: 1em;
+  --#{$prefix}btn-close-padding-x: 0.25em;
+  --#{$prefix}btn-close-padding-y: 0.25em;
+  --#{$prefix}btn-close-color: var(--#{$prefix}black);
+  --#{$prefix}btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  --#{$prefix}btn-close-focus-shadow: 0 0 0 0.25rem rgba(var(--#{$prefix}primary-rgb), 0.25);
+  --#{$prefix}btn-close-opacity: 0.5;
+  --#{$prefix}btn-close-hover-opacity: 0.75;
+  --#{$prefix}btn-close-focus-opacity: 1;
+  --#{$prefix}btn-close-disabled-opacity: 0.25;
+  --#{$prefix}btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+
+  // Offcanvas
+  --#{$prefix}offcanvas-zindex: 1045;
+  --#{$prefix}offcanvas-width: 400px;
+  --#{$prefix}offcanvas-height: 30vh;
+  --#{$prefix}offcanvas-padding-x: 1rem;
+  --#{$prefix}offcanvas-padding-y: 1rem;
+  --#{$prefix}offcanvas-color: var(--#{$prefix}body-color);
+  --#{$prefix}offcanvas-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}offcanvas-border-width: var(--#{$prefix}border-width);
+  --#{$prefix}offcanvas-border-color: var(--#{$prefix}border-color-translucent);
+  --#{$prefix}offcanvas-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --#{$prefix}offcanvas-transition: transform 0.3s ease-in-out;
+  --#{$prefix}offcanvas-backdrop-bg: var(--#{$prefix}black);
+  --#{$prefix}offcanvas-backdrop-opacity: 0.5;
+
+  // Code
+  --#{$prefix}code-font-size: 0.875em;
+  --#{$prefix}code-color: var(--#{$prefix}pink);
+
+  --#{$prefix}kbd-padding-x: 0.4rem;
+  --#{$prefix}kbd-padding-y: 0.2rem;
+  --#{$prefix}kbd-font-size: 0.875em;
+  --#{$prefix}kbd-color: var(--#{$prefix}body-bg);
+  --#{$prefix}kbd-bg: var(--#{$prefix}gray-900);
+  --#{$prefix}kbd-nested-font-weight: var(--#{$prefix}font-weight-bold);
+
+  --#{$prefix}pre-color: null;
+
+  // Z-index master list
+  --#{$prefix}zindex-dropdown: 1000;
+  --#{$prefix}zindex-sticky: 1020;
+  --#{$prefix}zindex-fixed: 1030;
+  --#{$prefix}zindex-offcanvas-backdrop: 1040;
+  --#{$prefix}zindex-offcanvas: 1045;
+  --#{$prefix}zindex-modal-backdrop: 1050;
+  --#{$prefix}zindex-modal: 1055;
+  --#{$prefix}zindex-popover: 1070;
+  --#{$prefix}zindex-tooltip: 1080;
+  --#{$prefix}zindex-toast: 1090;
+
+  // RGB versions of theme colors for use in rgba() functions
+  --#{$prefix}primary-rgb: 13, 110, 253;
+  --#{$prefix}secondary-rgb: 108, 117, 125;
+  --#{$prefix}success-rgb: 25, 135, 84;
+  --#{$prefix}info-rgb: 13, 202, 240;
+  --#{$prefix}warning-rgb: 255, 193, 7;
+  --#{$prefix}danger-rgb: 220, 53, 69;
+  --#{$prefix}light-rgb: 248, 249, 250;
+  --#{$prefix}dark-rgb: 33, 37, 41;
+  --#{$prefix}body-color-rgb: 33, 37, 41;
+  --#{$prefix}body-bg-rgb: 255, 255, 255;
+  --#{$prefix}emphasis-color-rgb: 0, 0, 0;
+
+  // Additional RGB values for various uses
+  --#{$prefix}white-rgb: 255, 255, 255;
+  --#{$prefix}black-rgb: 0, 0, 0;
+  --#{$prefix}link-color-rgb: 13, 110, 253;
+  --#{$prefix}link-hover-color-rgb: 10, 88, 202;
+  --#{$prefix}btn-link-focus-shadow-rgb: 13, 110, 253;
+
+  // Secondary/tertiary color RGB values
+  --#{$prefix}secondary-color-rgb: 108, 117, 125;
+  --#{$prefix}secondary-bg-rgb: 233, 236, 239;
+  --#{$prefix}tertiary-color-rgb: 173, 181, 189;
+  --#{$prefix}tertiary-bg-rgb: 248, 249, 250;
+
+  // Dark mode RGB values
+  --#{$prefix}body-color-dark-rgb: 173, 181, 189;
+  --#{$prefix}body-bg-dark-rgb: 33, 37, 41;
+  --#{$prefix}emphasis-color-dark-rgb: 255, 255, 255;
+  --#{$prefix}secondary-color-dark-rgb: 173, 181, 189;
+  --#{$prefix}secondary-bg-dark-rgb: 52, 58, 64;
+  --#{$prefix}tertiary-color-dark-rgb: 173, 181, 189;
+  --#{$prefix}tertiary-bg-dark-rgb: 43, 48, 53;
+  --#{$prefix}link-color-dark-rgb: 102, 158, 255;
+  --#{$prefix}link-hover-color-dark-rgb: 130, 175, 255;
+
+  // Collapse transition
+  --#{$prefix}collapse-transition: height 0.35s ease;
+}

@@ -134,19 +134,19 @@
       @include button-variant(
         $value,
         $value,
-        $hover-background: shade-color($value, $btn-hover-bg-shade-amount),
-        $hover-border: shade-color($value, $btn-hover-border-shade-amount),
-        $active-background: shade-color($value, $btn-active-bg-shade-amount),
-        $active-border: shade-color($value, $btn-active-border-shade-amount)
+        $hover-background: color-mix(in srgb, $value, black #{$btn-hover-bg-shade-amount}),
+        $hover-border: color-mix(in srgb, $value, black #{$btn-hover-border-shade-amount}),
+        $active-background: color-mix(in srgb, $value, black #{$btn-active-bg-shade-amount}),
+        $active-border: color-mix(in srgb, $value, black #{$btn-active-border-shade-amount})
       );
     } @else if $color == "dark" {
       @include button-variant(
         $value,
         $value,
-        $hover-background: tint-color($value, $btn-hover-bg-tint-amount),
-        $hover-border: tint-color($value, $btn-hover-border-tint-amount),
-        $active-background: tint-color($value, $btn-active-bg-tint-amount),
-        $active-border: tint-color($value, $btn-active-border-tint-amount)
+        $hover-background: color-mix(in srgb, $value, white #{$btn-hover-bg-tint-amount}),
+        $hover-border: color-mix(in srgb, $value, white #{$btn-hover-border-tint-amount}),
+        $active-background: color-mix(in srgb, $value, white #{$btn-active-bg-tint-amount}),
+        $active-border: color-mix(in srgb, $value, white #{$btn-active-border-tint-amount})
       );
     } @else {
       @include button-variant($value, $value);

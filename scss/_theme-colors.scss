@@ -1,0 +1,51 @@
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    var(--#{$prefix}primary),
+  "secondary":  var(--#{$prefix}secondary),
+  "success":    var(--#{$prefix}success),
+  "info":       var(--#{$prefix}info),
+  "warning":    var(--#{$prefix}warning),
+  "danger":     var(--#{$prefix}danger),
+  "light":      var(--#{$prefix}light),
+  "dark":       var(--#{$prefix}dark),
+  "white":      var(--#{$prefix}white),
+  "black":      var(--#{$prefix}black),
+  "blue":       var(--#{$prefix}blue),
+  "indigo":     var(--#{$prefix}indigo),
+  "purple":     var(--#{$prefix}purple),
+  "pink":       var(--#{$prefix}pink),
+  "red":        var(--#{$prefix}red),
+  "orange":     var(--#{$prefix}orange),
+  "yellow":     var(--#{$prefix}yellow),
+  "green":      var(--#{$prefix}green),
+  "teal":       var(--#{$prefix}teal),
+  "cyan":       var(--#{$prefix}cyan),
+  "gray":       var(--#{$prefix}gray),
+) !default;
+// scss-docs-end theme-colors-map
+
+// Use hardcoded RGB values since we can't convert CSS variables to RGB
+$theme-colors-rgb: (
+  "primary":   var(--#{$prefix}primary-rgb),
+  "secondary": var(--#{$prefix}secondary-rgb),
+  "success":   var(--#{$prefix}success-rgb),
+  "info":      var(--#{$prefix}info-rgb),
+  "warning":   var(--#{$prefix}warning-rgb),
+  "danger":    var(--#{$prefix}danger-rgb),
+  "light":     var(--#{$prefix}light-rgb),
+  "dark":      var(--#{$prefix}dark-rgb),
+  "white":     var(--#{$prefix}white-rgb),
+  "black":     var(--#{$prefix}black-rgb),
+  "blue":      var(--#{$prefix}blue-rgb),
+  "indigo":    var(--#{$prefix}indigo-rgb),
+  "purple":    var(--#{$prefix}purple-rgb),
+  "pink":      var(--#{$prefix}pink-rgb),
+  "red":       var(--#{$prefix}red-rgb),
+  "orange":    var(--#{$prefix}orange-rgb),
+  "yellow":    var(--#{$prefix}yellow-rgb),
+  "green":     var(--#{$prefix}green-rgb),
+  "teal":      var(--#{$prefix}teal-rgb),
+  "cyan":      var(--#{$prefix}cyan-rgb),
+  "gray":      var(--#{$prefix}gray-rgb),
+) !default;
+// scss-docs-end theme-colors-rgb

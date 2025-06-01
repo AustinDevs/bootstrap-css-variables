@@ -16,7 +16,7 @@
       }
 
       &.active {
-        color: $white;
+        color: var(--#{$prefix}white);
         background-color: $color;
         border-color: $color;
       }

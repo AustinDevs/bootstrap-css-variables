@@ -211,11 +211,11 @@ $enable-important-utilities: false;
           )
         ) {
           .padding-1rem {
-            --bs-padding: 1rem;
+            --#{$prefix}padding: 1rem;
           }
 
           .padding-2rem {
-            --bs-padding: 2rem;
+            --#{$prefix}padding: 2rem;
           }
         }
       }
@@ -230,11 +230,11 @@ $enable-important-utilities: false;
           )
         ) {
           .padding-1rem {
-            --bs-padding: 1rem;
+            --#{$prefix}padding: 1rem;
           }
 
           .padding-2rem {
-            --bs-padding: 2rem;
+            --#{$prefix}padding: 2rem;
           }
         }
       }
@@ -251,16 +251,16 @@ $enable-important-utilities: false;
               color-saturation: .25
             ),
             values: (
-              blue: hsla(192deg, var(--bs-color-saturation), 0, var(--bs-color-opacity))
+              blue: hsla(192deg, var(--#{$prefix}color-saturation), 0, var(--#{$prefix}color-opacity))
             )
           )
         ) {
           .desaturated-color-blue {
-            --bs-color-opacity: 1;
+            --#{$prefix}color-opacity: 1;
             // Sass compilation will put a leading zero so we want to keep that one
             // stylelint-disable-next-line @stylistic/number-leading-zero
-            --bs-color-saturation: 0.25;
-            color: hsla(192deg, var(--bs-color-saturation), 0, var(--bs-color-opacity));
+            --#{$prefix}color-saturation: 0.25;
+            color: hsla(192deg, var(--#{$prefix}color-saturation), 0, var(--#{$prefix}color-opacity));
           }
         }
       }
@@ -278,15 +278,15 @@ $enable-important-utilities: false;
           )
         ) {
           .padding-1rem {
-            --bs-padding: 1rem;
+            --#{$prefix}padding: 1rem;
           }
 
           .padding-1rem-hover:hover {
-            --bs-padding: 1rem;
+            --#{$prefix}padding: 1rem;
           }
 
           .padding-1rem-focus:focus {
-            --bs-padding: 1rem;
+            --#{$prefix}padding: 1rem;
           }
         }
       }
